@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="org.apache.cordova.prefered-shared"
+    version="0.1">
+
+    <name>Prefered</name>
+    <description>Cordova Prefered Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,prefered</keywords>
+
+    <js-module src="www/prefered.js" name="prefered">
+        <merges target="navigator.prefered" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Prefered">
+                <param name="android-package" value="org.apache.cordova.prefered.Prefered"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Prefered.java" target-dir="src/org/apache/cordova/prefered" />
+    </platform>
+
+</plugin>
